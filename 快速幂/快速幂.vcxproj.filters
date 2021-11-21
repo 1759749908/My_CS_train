@@ -15,22 +15,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="快速幂.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Fabricate.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Multi.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="..\tmp2\BigNum.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="declare.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

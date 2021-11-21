@@ -325,8 +325,10 @@ void BigNum::rprint() {
 }
 
 int main() {
-	BigNum a = 250;
-	BigNum b = "10";
-	BigNum C = a / b;
-	C.print();
+
+	BigNum A = 1;
+	for (unsigned long long i = 1; i <= 10000; i++) {
+		A = A * i;
+	}
+	A.print();
 }

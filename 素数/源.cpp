@@ -11,7 +11,7 @@ void P55Q13();
 void P55Q14();
 
 int main() {
-#define algorithm_version 1		//计算素数的算法，1是目前最高效的算法。
+#define algorithm_version 2		//计算素数的算法，1是目前最高效的算法。
 	int choice;
 	cout << "输入你的选择：" << endl;
 	cout << "1：孪生素数" << endl;
@@ -19,7 +19,8 @@ int main() {
 	cout << "3：P55Q12" << endl;
 	cout << "4：P55Q13" << endl;
 	cout << "5：P55Q14" << endl;
-	cin >> choice;
+	//cin >> choice;
+	choice = 1;
 
 	switch (choice) {
 	case 1:孪生素数(); break;
@@ -45,13 +46,16 @@ void 孪生素数() {
 		bool mode = 0;
 
 		cout << "输入0为输出素数，输入1为输出孪生素数：";
-		cin >> mode;
+		//cin >> mode;
+		mode = 1;
 
 		if (mode) {
 			cout << "输出多少个孪生素数：";
-			cin >> n;
+			//cin >> n;
+			n = 100000;
 			cout << "素数之间的距离是：";
-			cin >> d;
+			//cin >> d;
+			d = 2;
 		}
 		else {
 			cout << "输出多少个素数：";
