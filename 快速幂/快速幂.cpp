@@ -1,9 +1,8 @@
 ﻿#include <iostream>
 using namespace std;
 
-int my_pow(int a, int b) {
-    int ans = 1;
-    int base = a;
+unsigned long long my_pow(unsigned long long a, unsigned long long b) {
+    unsigned long long ans = 1,base = a;
 
     while (b) {
         if (b & 1) {
@@ -16,8 +15,24 @@ int my_pow(int a, int b) {
     return ans;
 }
 
+unsigned long long my_pow_mod(unsigned long long a, unsigned long long b, unsigned long long c) {
+    unsigned long long ans = 1, base = a;
+
+    while (b) {
+        if (b & 1) {
+            ans = ans * base % c;
+        }
+        base = base * base % c;
+        b >>= 1;
+
+    }
+
+    return ans;
+
+}
+
 int main()
 {
-    cout << my_pow(2, 5) << endl;
+    cout << my_pow_mod(2, 1000000,998244353) << endl;
 
 }

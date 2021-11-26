@@ -1,8 +1,14 @@
-﻿#include <iostream>
+﻿#include<iostream>
 using namespace std;
+double good(double l)
+{
+	return 4 * l;
+}
+int main()
+{
+	double x = 1.23;
 
-int main() {
-	for (unsigned int i = 5; i >= 0; i--) {
-		cout << i << endl;
-	}
+	double (*pfun[4])(double);
+	pfun[0] = good;
+	cout << (*pfun[0])(x) << endl;
 }

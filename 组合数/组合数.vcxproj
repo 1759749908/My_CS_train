@@ -139,7 +139,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\tmp2\BigNum.cpp" />
     <ClCompile Include="Fabricate.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Multi.cpp" />
