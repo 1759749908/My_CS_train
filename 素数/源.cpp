@@ -46,16 +46,13 @@ void 孪生素数() {
 		bool mode = 0;
 
 		cout << "输入0为输出素数，输入1为输出孪生素数：";
-		//cin >> mode;
-		mode = 1;
+		cin >> mode;
 
 		if (mode) {
 			cout << "输出多少个孪生素数：";
-			//cin >> n;
-			n = 100000;
+			cin >> n;
 			cout << "素数之间的距离是：";
-			//cin >> d;
-			d = 2;
+			cin >> d;
 		}
 		else {
 			cout << "输出多少个素数：";
@@ -143,10 +140,16 @@ void 孪生素数() {
 			}
 		}
 		else {
+			//for (const auto& i : prime) {
+			//	buffer.append(to_string(i));
+			//	buffer.push_back('\n');
+			//}
+
 			for (const auto& i : prime) {
 				buffer.append(to_string(i));
-				buffer.push_back('\n');
+				buffer.push_back(',');
 			}
+
 		}
 
 		cout << buffer;		//cout在连续输出时的效率低，设置缓冲区可以加快输出速度

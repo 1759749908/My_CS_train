@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
 	while (true) {
-		cout << "ÇëÊäÈëm,n:" << endl;
+		cout << "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½m,n:" << endl;
 		int m, n;
 		cin >> m >> n;
 		cout << Fabricate(m, n) << endl;

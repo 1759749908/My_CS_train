@@ -5,12 +5,12 @@ void hannoi(int n, char A, char B, char C)
 {
     if (n == 1)
     {
-		printf_s("ÒÆ¶¯%dºÅÔ²È¦£¬´Ó%cÒÆ¶¯µ½%cÅÌ\n", n, A, C);
+		printf_s("ï¿½Æ¶ï¿½%dï¿½ï¿½Ô²È¦ï¿½ï¿½ï¿½ï¿½%cï¿½Æ¶ï¿½ï¿½ï¿½%cï¿½ï¿½\n", n, A, C);
     }
     else
     {
         hannoi(n - 1, A, C, B);
-        printf_s("ÒÆ¶¯%dºÅÔ²È¦£¬´Ó%cÒÆ¶¯µ½%cÅÌ\n", n, A, C);
+        printf_s("ï¿½Æ¶ï¿½%dï¿½ï¿½Ô²È¦ï¿½ï¿½ï¿½ï¿½%cï¿½Æ¶ï¿½ï¿½ï¿½%cï¿½ï¿½\n", n, A, C);
         hannoi(n - 1, B, A, C);
     }
 }

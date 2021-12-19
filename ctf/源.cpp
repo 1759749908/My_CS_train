@@ -3,12 +3,13 @@
 using namespace std;
 int main()
 {
-    string password = "fk_dwqo^njXkcjWg_l";
-
-    for (char i = 0; i <= 18; i++) {
-        cout << char(password[i] + i);
+    string password = "akhb~chdaZrdaZudqduvdZvvv|";
+    string password2;
+    for (char i : password) {
+		password2.push_back((i - 1) ^ 6);
+        //xor¼ÓÃÜ
     }
-    cout << endl;
+    cout << password2 << endl;
 
     return 0;
 }

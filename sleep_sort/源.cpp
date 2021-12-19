@@ -5,18 +5,19 @@
 
 using namespace std;
 
-//´óÃû¶¦¶¦µÄË¯ÃßÅÅĞò
+//Ë¯ÃßÅÅĞò
 
 void sort(unsigned int sleep_time) {
 	Sleep(sleep_time);
-	printf("%d\n", sleep_time*10);
+	printf("%d\n", sleep_time);
 }
 
 int main() {
 	vector<thread> my_threads;
 	vector<unsigned int> unsort;
-	for (int i = 0; i < 1000; i++) {
+	srand((unsigned int)time(NULL));
 
+	for (int i = 0; i < 100; i++) {
 		unsort.push_back(rand());
 	}
 
