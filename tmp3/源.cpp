@@ -1,236 +1,277 @@
 ﻿//#include <iostream>
-//#include <string>
-//#include <vector>
-//#include <iomanip>
-//#include <algorithm>
 //using namespace std;
 //
-//class Student {
-//public:
-//	string name;
-//	int ID;
-//	float MT;
-//	float EN;
-//	float PH;
-//	float SUM;
-//	float AVG;
-//	Student(const string&, const int&, const float&, const float&, const float&);
-//	void Display() const;
+//void test() {
+//	cout << "Hey,boy" << endl;
+//}
+//
+//int main() {
+//
+//	unsigned char* p_MARK = (unsigned char*)test;
+//
+//	for (; p_MARK <= (unsigned char*)test; p_MARK++) {
+//		if (*p_MARK == 0xCC) {
+//			//(* p_MARK)++;
+//			cout << "Don't debug me!" << endl;
+//			exit(1);
+//		}
+//	}
+//
+//	test();
+//}
+//
+
+//#include <stdio.h>
+//#include <iostream>
+//
+//union data {
+//    int n;
+//    char ch[4];
+//    short m;
 //};
 //
-//void stu_print(const vector<Student>&);
-//void find_stu(const vector<Student>&);
-//void m_sort(vector<Student> exam, const int& ID = -1);
-//
 //int main() {
-//	vector<Student> exam;
-//	exam.emplace_back(Student("张三", 001, 0, 0, 0));
-//	exam.emplace_back(Student("李四", 002, 60, 60, 60));
-//	exam.emplace_back(Student("王五", 003, 150, 150, 150));
-//	exam.emplace_back(Student("小明", 004, 60, 76, 78));
-//	exam.emplace_back(Student("李雷", 005, 87, 34, 87));
-//	exam.emplace_back(Student("韩梅梅", 006, 83, 38, 43));
-//	exam.emplace_back(Student("李华", 007, 35, 87, 68));
+//    union data a;
+//    printf("%d, %d\n", sizeof(a), sizeof(union data));
+//    a.n = 0x40;
+//    printf("%X, %c, %hX\n", a.n, a.ch, a.m);
+//    a.ch = '9';
+//    printf("%X, %c, %hX\n", a.n, a.ch, a.m);
+//    a.m = 0x2059;
+//    printf("%X, %c, %hX\n", a.n, a.ch, a.m);
+//    a.n = 0x3E25AD54;
+//    printf("%X, %c, %hX\n", a.n, a.ch, a.m);
 //
-//
-//	int choice;
-//	while (true) {
-//		cout <<
-//			"***********************        欢迎进入考试系统        ***********************\n" <<
-//			"操作说明：0-退出系统；1-输出名次表(按学号)；2-查找学生；3-输出名次表(按总分)；\n" <<
-//			"请输入操作：";
-//
-//		if (!(cin >> choice)) {
-//			cout << "输入非法，请重试" << endl;
-//			cin.clear();
-//			cin.ignore();
-//			continue;
-//		}
-//
-//		switch (choice) {
-//		case 0:
-//			exit(0);
-//		case 1:
-//			stu_print(exam);
-//			break;
-//		case 2:
-//			find_stu(exam);
-//			break;
-//		case 3:
-//			m_sort(exam);
-//			break;
-//		}
-//
-//	}
-//}
-//
-//
-//Student::Student(
-//	const string& name,
-//	const int& ID,
-//	const float& MT,
-//	const float& EN,
-//	const float& PH)
-//	:
-//	name(name),
-//	ID(ID),
-//	MT(MT),
-//	EN(EN),
-//	PH(PH),
-//	SUM(MT + EN + PH),
-//	AVG(SUM / 3)
-//{
-//	//据说初始化列表性能高
-//}
-//
-//void Student::Display() const {
-//	cout << "姓名：" << name << setw(20 - name.size()) << " 学号：" << ID << " \t数学：" << MT << " \t英语：" << EN << " \t物理：" << PH << " \t总分：" << SUM << " \t平均分：" << AVG << endl;
-//}
-//
-//void stu_print(const vector<Student>& exam) {
-//	for (vector<Student>::const_iterator it = exam.cbegin(); it != exam.cend(); it++) {
-//		it->Display();
-//	}
-//}
-//
-//void find_stu(const vector<Student>& exam) {
-//	int ID;
-//	cout << "输入你想查找的学生学号：";
-//	cin >> ID;
-//	m_sort(exam, ID);
-//	//for (vector<Student>::const_iterator it = exam.cbegin(); it != exam.cend(); it++) {
-//	//	if (it->ID == ID) {
-//	//		it->Display();
-//	//	}
-//	//}
-//}
-//
-//void m_sort(vector<Student> exam, const int& ID) {
-//	bool opt = true;
-//	while (opt) {
-//		opt = false;
-//		for (int i = 0; i < exam.size() - 1; i++) {
-//			if (exam[i].SUM < exam[i + 1].SUM) {
-//				swap(exam[i], exam[i + 1]);
-//				opt = true;
-//			}
-//		}
-//	}
-//
-//	if (ID == -1) {
-//		stu_print(exam);
-//	}
-//	else {
-//		for (int i = 0; i < exam.size(); i++) {
-//			if (exam[i].ID == ID) {
-//				exam[i].Display();
-//				cout << "排名为：" << i + 1 << endl;
-//				return;
-//			}
-//		}
-//	}
+//    return 0;
 //}
 
-//#include <iostream>
-//#include <string>
-//using namespace std;
-//int main() {
-//	string a;
-//	string b;
-//	cout << "请输入第一个字符串：";
-//	cin >> a;
-//	cout << "请输入第二个字符串：";
-//	cin >> b;
-//
-//	string c;
-//	for (auto i : a) {
-//		c.push_back(i);
-//	}
-//
-//	for (auto i : b) {
-//		c.push_back(i);
-//	}
-//
-//	cout << c << endl;
-//}
 
-//#include <iostream>
-//#include <string>
-//#include <ctime>
-//using namespace std;
-//
-//void Print(int* p, int k) {
-//	for (int i = 0; i < k; i++) {
-//		cout << p[i] << "\t";
-//		if (!((i + 1) % 20)) {
-//			cout << endl;
-//		}
-//	}
-//	cout << endl;
-//}
-//
-//void my_sort(int* p, int k) {
-//	bool opt = true;
-//	while (opt) {
-//		opt = false;
-//		for (int i = 0; i < k - 1; i++) {
-//			if (p[i] < p[i + 1]) {
-//				swap(p[i], p[i + 1]);
-//				opt = true;
-//			}
-//		}
-//	}
-//	Print(p, k);
-//
-//}
-//
-//int main() {
-//	cout << "要多少个数？";
-//	srand(unsigned(time(NULL)));
-//	int n;
-//	cin >> n;
-//	int* p = new int[n + 1];
-//	for (int i = 0; i < n; i++) {
-//		p[i] = rand() % 9001 + 10;
-//	}
-//
-//	my_sort(p, n);
-//
-//	int ins;
-//	cout << "插入一个数：";
-//	cin >> ins;
-//	p[n] = ins;
-//	my_sort(p, n + 1);
-//}
+
+
+
 
 
 
 #include <iostream>
 using namespace std;
 
-void test() {
-	cout << "Hey,boy" << endl;
+template<class T>
+class vector {
+public:
+	vector();
+	vector(const int&);
+	vector(const int&,const T&);
+	vector(const vector<T>&);
+	~vector();
+
+	void recapacity(const int&);
+	void push_back(const T&);
+	void pop_back();
+
+	inline T& operator[](const int&);
+	vector<T>& operator=(const vector&);
+	vector<T> operator+(const vector&);
+	vector<T> operator-(const vector&);
+	bool operator==(const vector&);
+	bool operator!=(const vector&);
+
+	inline int Size();
+	inline int Capacity();
+
+	friend ostream& operator<<(ostream&, const vector<T>&);
+	//friend istream& operator>>(istream&, vector<T>&);
+
+private:
+	T* T_Array;
+	int capacity;
+	int size;
+};
+
+
+template<class T>
+ostream& operator<<(ostream& os, const vector<T>& Array)
+{
+	for (int i = 0; i < Array.size; i++) {
+		os << Array.T_Array[i] << " ";
+	}
+	return os;
 }
 
 int main() {
+	vector<int> arr(5,1);
+	arr.push_back(10);
+	arr.push_back(20);
+	arr.push_back(30);
+	arr.push_back(40);
+	arr.push_back(50);
 
-	unsigned char* p = (unsigned char*)main;
-	unsigned char MARK = *(unsigned char*)test;
+	arr.pop_back();
 
-	for (; p < (unsigned char*)main + 34; p++) {
-		if (*p == 0xCC) {
-			goto dangerous;
-		}
+	for (int i = 0; i < arr.Size(); i++) {
+		cout << arr[i] << "\t";
 	}
+	cout << endl;
 
-	if (MARK == 0xCC) {
-		goto dangerous;
+	vector<int> arr2(6,8);
+
+	arr = arr + arr2;
+
+	cout << (arr == arr2) << endl;
+	cout << (arr != arr2) << endl;
+
+	for (int i = 0; i < arr.Size(); i++) {
+		cout << arr[i] << "\t";
 	}
+	cout << endl;
 
-	test();
-
-	exit(0);
-dangerous:
-	cout << "Don't debug me!" << endl;
-	exit(1);
 }
+
+template<class T>
+void vector<T>::recapacity(const int& n) {
+	if (n < 0) return;
+	T* T_Tmp = new T[n];
+	memcpy(T_Tmp, this->T_Array, n * sizeof(T));
+	delete[] T_Array;
+	T_Array = T_Tmp;
+	T_Tmp = nullptr;
+
+	capacity = n;
+
+	if (n <= size) {
+		size = n;
+	}
+}
+
+template<class T>
+void vector<T>::push_back(const T& tmp) {
+	if (capacity > size) {
+		T_Array[size] = tmp;
+		++size;
+	}
+	else {
+		this->recapacity(2 * size + 1);
+		T_Array[size] = tmp;
+		++size;
+	}
+}
+
+template<class T>
+void vector<T>::pop_back() {
+	--size;
+	//眼不见为净
+}
+
+template<class T>
+inline T& vector<T>::operator[](const int& n) {
+	return T_Array[n];
+}
+
+template<class T>
+vector<T>& vector<T>::operator=(const vector& Array) {
+	this->capacity = Array.capacity;
+	this->size = Array.size;
+	T_Array = new T[size];
+	memcpy(this->T_Array, Array.T_Array, size * sizeof(T));
+	return *this;
+}
+
+template<class T>
+vector<T> vector<T>::operator+(const vector& Array) {
+	int min = this->size > Array.size ? Array.size : this->size;
+	vector<T> tmp = this->size > Array.size ? *this : Array;
+	for (int i = 0; i < min; i++) {
+		tmp[i] += Array.T_Array[i];
+	}
+	return tmp;
+}
+
+template<class T>
+vector<T> vector<T>::operator-(const vector& Array) {
+	int min = this->size > Array.size ? Array.size : this->size;
+	vector<T> tmp = this->size > Array.size ? *this : Array;
+	for (int i = 0; i < min; i++) {
+		tmp[i] -= Array.T_Array[i];
+	}
+	return tmp;
+}
+
+template<class T>
+bool vector<T>::operator==(const vector& Array) {
+	if (this->size != Array.size) return false;
+	return memcmp(this->T_Array, Array.T_Array, this->size * sizeof(T)) ? false : true;
+}
+
+template<class T>
+bool vector<T>::operator!=(const vector& Array) {
+	if (this->size != Array.size) return true;
+	return memcmp(this->T_Array, Array.T_Array, this->size * sizeof(T)) ? true : false;
+}
+
+template<class T>
+inline int vector<T>::Size() {
+	return size;
+}
+
+template<class T>
+inline int vector<T>::Capacity() {
+	return capacity;
+}
+
+template<class T>
+vector<T>::vector() {
+	size = 0;
+	capacity = 0;
+	T_Array = new T[size];
+}
+
+template<class T>
+vector<T>::vector(const int& n) {
+	size = 0;
+	capacity = n;
+	T_Array = new T[size];
+}
+
+template<class T>
+vector<T>::vector(const int& n,const T& tmp) {
+	size = n;
+	capacity = n;
+	T_Array = new T[size];
+	for (int i = 0; i < size; i++) {
+		T_Array[i] = tmp;
+	}
+}
+
+template<class T>
+vector<T>::vector(const vector<T>& Array) {
+	this->capacity = Array.capacity;
+	this->size = Array.size;
+	T_Array = new T[size];
+	memcpy(this->T_Array, Array.T_Array, size * sizeof(T));
+}
+
+template<class T>
+vector<T>::~vector() {
+	delete[] T_Array;
+}
+
+
+
+
+
+
+//template<class T>
+//istream& operator>>(istream& is, vector<T>& Array) {
+//	while (Array.size < Array.capacity) {
+//		is >> Array.T_Array[size];
+//		++size;
+//	}
+//	return is;
+//}
+
+
+
+
+
+
+
+

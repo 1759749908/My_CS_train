@@ -1,54 +1,36 @@
-﻿//#include <iostream>
-//using namespace std;
-//
-//void test() {
-//	cout << "Hey,boy" << endl;
-//}
-//
-//int main() {
-//
-//	unsigned char* p_MARK = (unsigned char*)test;
-//
-//	for (; p_MARK < (unsigned char*)test + 30; p_MARK++) {
-//		if (*p_MARK == 0xCC) {
-//			//(* p_MARK)++;
-//			cout << "Don't debug me!" << endl;
-//			exit(1);
-//		}
-//	}
-//
-//	test();
-//}
-
-
-#include<iostream>
+﻿#include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
-int main()
-{
-	char* a, * b, * c;
-	int n, m;
-	cin >> n >> m;
-	a = new char[n];
-	b = new char[m];
-	c = new char[n + m + 1];
-	cin >> a;
-	cin >> b;
-	cout << &a << endl;
-	cout << &b << endl;
 
-	for (int i = 0; i < n; i++)
-	{
-		c[i] = a[i];
+long long table[1000];
+
+long long func(int n) {
+	if (n <= 0) {
+		return 0;
 	}
-	for (int i = n; i < n + m; i++)
-	{
-		c[i] = b[i - n];
+	else if (table[n] != -1) {
+		return table[n];
 	}
-	for (int i = 0; i < n + m; i++)
-	{
-		cout << c[i];
+	else {
+		long long ans = func(n - 1) + func(n - 3) + func(n - 8) + func(n - 10) + func(n - 12);
+		table[n] = ans;
+		return ans;
 	}
-	delete[]a;
-	delete[]b;
-	delete[]c;
+}
+
+int main() {
+	fill_n(table, 1000, -1);
+	table[1] = 1;
+	table[2] = 1;
+	table[3] = 2;
+	table[4] = 3;
+	table[5] = 4;
+	table[6] = 6;
+	table[7] = 9;
+	table[8] = 11;
+	table[9] = 17;
+
+	cout << func(301) << endl;
+
 }
