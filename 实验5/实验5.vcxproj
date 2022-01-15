@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{2ee78453-4cda-4a5f-b464-cc21c32b6cfc}</ProjectGuid>
-    <RootNamespace>tmp6</RootNamespace>
+    <ProjectGuid>{983b1e62-a15a-4f94-81bf-3a209232f09d}</ProjectGuid>
+    <RootNamespace>实验5</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -88,9 +88,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
-      <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <EnableModules>true</EnableModules>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -142,7 +139,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="tmp6.cpp" />
+    <ClCompile Include="database.cpp" />
+    <ClCompile Include="People.cpp" />
+    <ClCompile Include="实验5.cpp" />
+    <ClCompile Include="my_func.cpp" />
+    <ClCompile Include="usefulFunc.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="database.h" />
+    <ClInclude Include="People.h" />
+    <ClInclude Include="my_func.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="usefulFunc.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="profile.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="people.db" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

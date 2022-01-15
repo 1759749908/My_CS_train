@@ -1,0 +1,7 @@
+People！ID,name,gender,birthday,phone
+Teacher！ID,name,gender,birthday,phone,dgree,title,salary
+Student！ID,name,gender,birthday,phone,major,grade,date
+phDStudent！ID,name,gender,birthday,phone,major,grade,date,field,papers
+GraduateStudent！ID,name,gender,birthday,phone,major,grade,date,field,papers
+UndergraduateStudent！ID,name,gender,birthday,phone,major,grade,date,english,math,PE
+PartTimePhD！ID,name,gender,birthday,phone,dgree,title,salary,ID,name,gender,birthday,phone,major,grade,date

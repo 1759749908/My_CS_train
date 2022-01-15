@@ -1,277 +1,139 @@
-﻿//#include <iostream>
-//using namespace std;
-//
-//void test() {
-//	cout << "Hey,boy" << endl;
-//}
-//
-//int main() {
-//
-//	unsigned char* p_MARK = (unsigned char*)test;
-//
-//	for (; p_MARK <= (unsigned char*)test; p_MARK++) {
-//		if (*p_MARK == 0xCC) {
-//			//(* p_MARK)++;
-//			cout << "Don't debug me!" << endl;
-//			exit(1);
-//		}
-//	}
-//
-//	test();
-//}
-//
-
-//#include <stdio.h>
-//#include <iostream>
-//
-//union data {
-//    int n;
-//    char ch[4];
-//    short m;
-//};
-//
-//int main() {
-//    union data a;
-//    printf("%d, %d\n", sizeof(a), sizeof(union data));
-//    a.n = 0x40;
-//    printf("%X, %c, %hX\n", a.n, a.ch, a.m);
-//    a.ch = '9';
-//    printf("%X, %c, %hX\n", a.n, a.ch, a.m);
-//    a.m = 0x2059;
-//    printf("%X, %c, %hX\n", a.n, a.ch, a.m);
-//    a.n = 0x3E25AD54;
-//    printf("%X, %c, %hX\n", a.n, a.ch, a.m);
-//
-//    return 0;
-//}
+﻿#pragma warning(disable : 4996)
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 
-
-
-
-
-
-
-#include <iostream>
-using namespace std;
-
-template<class T>
-class vector {
-public:
-	vector();
-	vector(const int&);
-	vector(const int&,const T&);
-	vector(const vector<T>&);
-	~vector();
-
-	void recapacity(const int&);
-	void push_back(const T&);
-	void pop_back();
-
-	inline T& operator[](const int&);
-	vector<T>& operator=(const vector&);
-	vector<T> operator+(const vector&);
-	vector<T> operator-(const vector&);
-	bool operator==(const vector&);
-	bool operator!=(const vector&);
-
-	inline int Size();
-	inline int Capacity();
-
-	friend ostream& operator<<(ostream&, const vector<T>&);
-	//friend istream& operator>>(istream&, vector<T>&);
-
-private:
-	T* T_Array;
-	int capacity;
-	int size;
+struct binary_tree {
+	char* name;
+	struct binary_tree* Next_1;
+	struct binary_tree* Next_2;
 };
 
+struct binary_tree root;
 
-template<class T>
-ostream& operator<<(ostream& os, const vector<T>& Array)
-{
-	for (int i = 0; i < Array.size; i++) {
-		os << Array.T_Array[i] << " ";
+struct binary_tree* find_tree_2(struct binary_tree* node, char* s) {
+	if (!(strcmp(node->name, s))) {
+		return node;
 	}
-	return os;
+	struct binary_tree* ans;
+	if (node->Next_1 == NULL && node->Next_2 == NULL) {
+		return NULL;
+	}
+	else {
+		if (node->Next_1 != NULL) {
+			ans = find_tree_2(node->Next_1, s);
+			if (ans != NULL) {
+				return ans;
+			}
+		}
+		if (node->Next_2 != NULL) {
+			ans = find_tree_2(node->Next_2, s);
+			if (ans != NULL) {
+				return ans;
+			}
+		}
+	}
+	return NULL;
+}
+
+struct binary_tree* find_tree(char* s) {
+	return find_tree_2(&root, s);
+}
+
+void push_tree(char* s1, char* s2) {
+	if (!(strcmp(s2, "~~~"))) {
+		root.name = (char*)malloc(strlen(s2));
+		strcpy(root.name, s2);
+		if (root.Next_1 == NULL) {
+			root.Next_1 = (struct binary_tree*)malloc(sizeof(struct binary_tree));
+			root.Next_1->name = (char*)malloc(strlen(s1));
+			strcpy(root.Next_1->name, s1);
+			root.Next_1->Next_1 = NULL;
+			root.Next_1->Next_2 = NULL;
+
+		}
+		else {
+			root.Next_2 = (struct binary_tree*)malloc(sizeof(struct binary_tree));
+			root.Next_2->name = (char*)malloc(strlen(s1));
+			strcpy(root.Next_2->name, s1);
+			root.Next_2->Next_1 = NULL;
+			root.Next_2->Next_2 = NULL;
+		}
+	}
+	else {
+		struct binary_tree* tmp = find_tree(s2);
+		if (tmp->Next_1 == NULL) {
+			tmp->Next_1 = (struct binary_tree*)malloc(sizeof(struct binary_tree));
+			tmp->Next_1->name = (char*)malloc(strlen(s1));
+			strcpy(tmp->Next_1->name, s1);
+			tmp->Next_1->Next_1 = NULL;
+			tmp->Next_1->Next_2 = NULL;
+
+		}
+		else {
+			tmp->Next_2 = (struct binary_tree*)malloc(sizeof(struct binary_tree));
+			tmp->Next_2->name = (char*)malloc(strlen(s1));
+			strcpy(tmp->Next_2->name, s1);
+			tmp->Next_2->Next_1 = NULL;
+			tmp->Next_2->Next_2 = NULL;
+		}
+	}
+}
+
+int	query_tree_2(struct binary_tree* node) {
+	int sum = 1;
+
+	if (node->Next_1 != NULL) {
+		sum += query_tree_2(node->Next_1);
+	}
+
+	if (node->Next_2 != NULL) {
+		sum += query_tree_2(node->Next_2);
+	}
+	return sum;
+}
+
+int	query_tree(char* s) {
+	return query_tree_2(find_tree(s));
+}
+
+void remove_tree(char* s) {
+	struct binary_tree* tmp = find_tree(s);
+	free(tmp->Next_1);
+	free(tmp->Next_2);
+	tmp->Next_1 = NULL;
+	tmp->Next_2 = NULL;
 }
 
 int main() {
-	vector<int> arr(5,1);
-	arr.push_back(10);
-	arr.push_back(20);
-	arr.push_back(30);
-	arr.push_back(40);
-	arr.push_back(50);
+	int n, q;
+	scanf("%d %d", &n, &q);
 
-	arr.pop_back();
+	char str1[100];
+	char str2[100];
 
-	for (int i = 0; i < arr.Size(); i++) {
-		cout << arr[i] << "\t";
+	memset(str1, 0, 100);
+	memset(str2, 0, 100);
+
+	for (int i = 0; i < n; i++) {
+		memset(str1, 0, 100);
+		memset(str2, 0, 100);
+		scanf("%s %s", str1, str2);
+		push_tree(str1, str2);
 	}
-	cout << endl;
 
-	vector<int> arr2(6,8);
-
-	arr = arr + arr2;
-
-	cout << (arr == arr2) << endl;
-	cout << (arr != arr2) << endl;
-
-	for (int i = 0; i < arr.Size(); i++) {
-		cout << arr[i] << "\t";
-	}
-	cout << endl;
-
-}
-
-template<class T>
-void vector<T>::recapacity(const int& n) {
-	if (n < 0) return;
-	T* T_Tmp = new T[n];
-	memcpy(T_Tmp, this->T_Array, n * sizeof(T));
-	delete[] T_Array;
-	T_Array = T_Tmp;
-	T_Tmp = nullptr;
-
-	capacity = n;
-
-	if (n <= size) {
-		size = n;
+	for (int i = 0; i < q; i++) {
+		memset(str1, 0, 100);
+		memset(str2, 0, 100);
+		scanf("%s %s", str1, str2);
+		if (!(strcmp(str1, "query"))) {
+			printf("%d\n", query_tree(str2));
+		}
+		else if (!(strcmp(str1, "remove"))) {
+			//remove
+			remove_tree(str2);
+		}
 	}
 }
-
-template<class T>
-void vector<T>::push_back(const T& tmp) {
-	if (capacity > size) {
-		T_Array[size] = tmp;
-		++size;
-	}
-	else {
-		this->recapacity(2 * size + 1);
-		T_Array[size] = tmp;
-		++size;
-	}
-}
-
-template<class T>
-void vector<T>::pop_back() {
-	--size;
-	//眼不见为净
-}
-
-template<class T>
-inline T& vector<T>::operator[](const int& n) {
-	return T_Array[n];
-}
-
-template<class T>
-vector<T>& vector<T>::operator=(const vector& Array) {
-	this->capacity = Array.capacity;
-	this->size = Array.size;
-	T_Array = new T[size];
-	memcpy(this->T_Array, Array.T_Array, size * sizeof(T));
-	return *this;
-}
-
-template<class T>
-vector<T> vector<T>::operator+(const vector& Array) {
-	int min = this->size > Array.size ? Array.size : this->size;
-	vector<T> tmp = this->size > Array.size ? *this : Array;
-	for (int i = 0; i < min; i++) {
-		tmp[i] += Array.T_Array[i];
-	}
-	return tmp;
-}
-
-template<class T>
-vector<T> vector<T>::operator-(const vector& Array) {
-	int min = this->size > Array.size ? Array.size : this->size;
-	vector<T> tmp = this->size > Array.size ? *this : Array;
-	for (int i = 0; i < min; i++) {
-		tmp[i] -= Array.T_Array[i];
-	}
-	return tmp;
-}
-
-template<class T>
-bool vector<T>::operator==(const vector& Array) {
-	if (this->size != Array.size) return false;
-	return memcmp(this->T_Array, Array.T_Array, this->size * sizeof(T)) ? false : true;
-}
-
-template<class T>
-bool vector<T>::operator!=(const vector& Array) {
-	if (this->size != Array.size) return true;
-	return memcmp(this->T_Array, Array.T_Array, this->size * sizeof(T)) ? true : false;
-}
-
-template<class T>
-inline int vector<T>::Size() {
-	return size;
-}
-
-template<class T>
-inline int vector<T>::Capacity() {
-	return capacity;
-}
-
-template<class T>
-vector<T>::vector() {
-	size = 0;
-	capacity = 0;
-	T_Array = new T[size];
-}
-
-template<class T>
-vector<T>::vector(const int& n) {
-	size = 0;
-	capacity = n;
-	T_Array = new T[size];
-}
-
-template<class T>
-vector<T>::vector(const int& n,const T& tmp) {
-	size = n;
-	capacity = n;
-	T_Array = new T[size];
-	for (int i = 0; i < size; i++) {
-		T_Array[i] = tmp;
-	}
-}
-
-template<class T>
-vector<T>::vector(const vector<T>& Array) {
-	this->capacity = Array.capacity;
-	this->size = Array.size;
-	T_Array = new T[size];
-	memcpy(this->T_Array, Array.T_Array, size * sizeof(T));
-}
-
-template<class T>
-vector<T>::~vector() {
-	delete[] T_Array;
-}
-
-
-
-
-
-
-//template<class T>
-//istream& operator>>(istream& is, vector<T>& Array) {
-//	while (Array.size < Array.capacity) {
-//		is >> Array.T_Array[size];
-//		++size;
-//	}
-//	return is;
-//}
-
-
-
-
-
-
-
-
