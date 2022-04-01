@@ -1,7 +1,14 @@
 ﻿#include <iostream>
 using namespace std;
 
+int func() {
+	int a = 5;
+	int b = 0;
+	int c = a / b;
+	return c;
+}
+
 int main() {
-	char str[] = "a\n\\t\\";
-	cout << str << endl;
+	int d = func();
+	cout << d << endl;
 }
