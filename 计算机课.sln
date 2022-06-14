@@ -73,6 +73,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "抽象", "抽象\抽象.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "实验5", "实验5\实验5.vcxproj", "{983B1E62-A15A-4F94-81BF-3A209232F09D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DLL2", "DLL2\DLL2.vcxproj", "{2525F3F3-27E0-429B-88DA-2761956EBDE0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "停车场管理系统", "停车场管理系统\停车场管理系统.vcxproj", "{98362E23-E8C9-4D65-9C98-6BF59505E810}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -503,6 +507,30 @@ Global
 		{983B1E62-A15A-4F94-81BF-3A209232F09D}.Release|x64.Build.0 = Release|x64
 		{983B1E62-A15A-4F94-81BF-3A209232F09D}.Release|x86.ActiveCfg = Release|Win32
 		{983B1E62-A15A-4F94-81BF-3A209232F09D}.Release|x86.Build.0 = Release|Win32
+		{2525F3F3-27E0-429B-88DA-2761956EBDE0}.Debug|x64.ActiveCfg = Debug|x64
+		{2525F3F3-27E0-429B-88DA-2761956EBDE0}.Debug|x64.Build.0 = Debug|x64
+		{2525F3F3-27E0-429B-88DA-2761956EBDE0}.Debug|x86.ActiveCfg = Debug|Win32
+		{2525F3F3-27E0-429B-88DA-2761956EBDE0}.Debug|x86.Build.0 = Debug|Win32
+		{2525F3F3-27E0-429B-88DA-2761956EBDE0}.nusafe|x64.ActiveCfg = Debug|x64
+		{2525F3F3-27E0-429B-88DA-2761956EBDE0}.nusafe|x64.Build.0 = Debug|x64
+		{2525F3F3-27E0-429B-88DA-2761956EBDE0}.nusafe|x86.ActiveCfg = Debug|Win32
+		{2525F3F3-27E0-429B-88DA-2761956EBDE0}.nusafe|x86.Build.0 = Debug|Win32
+		{2525F3F3-27E0-429B-88DA-2761956EBDE0}.Release|x64.ActiveCfg = Release|x64
+		{2525F3F3-27E0-429B-88DA-2761956EBDE0}.Release|x64.Build.0 = Release|x64
+		{2525F3F3-27E0-429B-88DA-2761956EBDE0}.Release|x86.ActiveCfg = Release|Win32
+		{2525F3F3-27E0-429B-88DA-2761956EBDE0}.Release|x86.Build.0 = Release|Win32
+		{98362E23-E8C9-4D65-9C98-6BF59505E810}.Debug|x64.ActiveCfg = Debug|x64
+		{98362E23-E8C9-4D65-9C98-6BF59505E810}.Debug|x64.Build.0 = Debug|x64
+		{98362E23-E8C9-4D65-9C98-6BF59505E810}.Debug|x86.ActiveCfg = Debug|Win32
+		{98362E23-E8C9-4D65-9C98-6BF59505E810}.Debug|x86.Build.0 = Debug|Win32
+		{98362E23-E8C9-4D65-9C98-6BF59505E810}.nusafe|x64.ActiveCfg = Debug|x64
+		{98362E23-E8C9-4D65-9C98-6BF59505E810}.nusafe|x64.Build.0 = Debug|x64
+		{98362E23-E8C9-4D65-9C98-6BF59505E810}.nusafe|x86.ActiveCfg = Debug|Win32
+		{98362E23-E8C9-4D65-9C98-6BF59505E810}.nusafe|x86.Build.0 = Debug|Win32
+		{98362E23-E8C9-4D65-9C98-6BF59505E810}.Release|x64.ActiveCfg = Release|x64
+		{98362E23-E8C9-4D65-9C98-6BF59505E810}.Release|x64.Build.0 = Release|x64
+		{98362E23-E8C9-4D65-9C98-6BF59505E810}.Release|x86.ActiveCfg = Release|Win32
+		{98362E23-E8C9-4D65-9C98-6BF59505E810}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
