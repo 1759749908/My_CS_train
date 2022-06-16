@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{98362e23-e8c9-4d65-9c98-6bf59505e810}</ProjectGuid>
-    <RootNamespace>停车场管理系统</RootNamespace>
+    <ProjectGuid>{6ac1a612-f23f-44ac-84e0-06585cdac1ec}</ProjectGuid>
+    <RootNamespace>EasyX</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -72,19 +72,23 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>E:\EasyX\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\EasyX\lib\VC2015\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>E:\EasyX\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\EasyX\lib\VC2015\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>E:\boost_1_79_0;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\boost_1_79_0\stage\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>E:\EasyX\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\EasyX\lib\VC2015\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>E:\boost_1_79_0;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\boost_1_79_0\stage\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>E:\EasyX\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\EasyX\lib\VC2015\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -120,8 +124,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp20</LanguageStandard>
-      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -136,8 +138,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp20</LanguageStandard>
-      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -147,19 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CarManager.cpp" />
-    <ClCompile Include="md5.cpp" />
-    <ClCompile Include="Park.cpp" />
-    <ClCompile Include="utils.cpp" />
-    <ClCompile Include="停车场管理系统.cpp" />
-    <ClCompile Include="Car.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Car.h" />
-    <ClInclude Include="CarManager.h" />
-    <ClInclude Include="md5.h" />
-    <ClInclude Include="Park.h" />
-    <ClInclude Include="utils.h" />
+    <ClCompile Include="EasyX.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

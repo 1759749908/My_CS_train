@@ -77,6 +77,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DLL2", "DLL2\DLL2.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "停车场管理系统", "停车场管理系统\停车场管理系统.vcxproj", "{98362E23-E8C9-4D65-9C98-6BF59505E810}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QT test", "QT test\QT test.vcxproj", "{7A174F68-B672-4E25-BA34-68D7B3B02DA1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -531,6 +533,18 @@ Global
 		{98362E23-E8C9-4D65-9C98-6BF59505E810}.Release|x64.Build.0 = Release|x64
 		{98362E23-E8C9-4D65-9C98-6BF59505E810}.Release|x86.ActiveCfg = Release|Win32
 		{98362E23-E8C9-4D65-9C98-6BF59505E810}.Release|x86.Build.0 = Release|Win32
+		{7A174F68-B672-4E25-BA34-68D7B3B02DA1}.Debug|x64.ActiveCfg = Debug|x64
+		{7A174F68-B672-4E25-BA34-68D7B3B02DA1}.Debug|x64.Build.0 = Debug|x64
+		{7A174F68-B672-4E25-BA34-68D7B3B02DA1}.Debug|x86.ActiveCfg = Debug|x64
+		{7A174F68-B672-4E25-BA34-68D7B3B02DA1}.Debug|x86.Build.0 = Debug|x64
+		{7A174F68-B672-4E25-BA34-68D7B3B02DA1}.nusafe|x64.ActiveCfg = Debug|x64
+		{7A174F68-B672-4E25-BA34-68D7B3B02DA1}.nusafe|x64.Build.0 = Debug|x64
+		{7A174F68-B672-4E25-BA34-68D7B3B02DA1}.nusafe|x86.ActiveCfg = Debug|x64
+		{7A174F68-B672-4E25-BA34-68D7B3B02DA1}.nusafe|x86.Build.0 = Debug|x64
+		{7A174F68-B672-4E25-BA34-68D7B3B02DA1}.Release|x64.ActiveCfg = Release|x64
+		{7A174F68-B672-4E25-BA34-68D7B3B02DA1}.Release|x64.Build.0 = Release|x64
+		{7A174F68-B672-4E25-BA34-68D7B3B02DA1}.Release|x86.ActiveCfg = Release|x64
+		{7A174F68-B672-4E25-BA34-68D7B3B02DA1}.Release|x86.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

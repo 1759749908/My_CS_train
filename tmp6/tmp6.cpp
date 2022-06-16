@@ -1,19 +1,11 @@
-﻿#include <iostream>
-#include <ctime>
-#include <boost/locale.hpp>
-#include <boost/date_time.hpp>
-#include <windows.h>
+﻿#include <iostream>  
+#include "md5.h"  
 
 using namespace std;
-using namespace boost::posix_time;
 
-
-int main()
+int main(int argc, char* argv[])
 {
-
-	ptime now = not_a_date_time;
-
-	int num[16];
-
-	cout << now << endl;
+    string str = "!Admin123";
+    cout << "md5 of this string: " << md5(str) << endl;
+    return 0;
 }
